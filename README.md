@@ -16,17 +16,9 @@ The dataset is downloaded locally by the data-provenance script. The downloaded 
 
 Please follow the dataset's access conditions and citation requirements.
 
-## 3. Desktop Setup
+## 3. Requirements
 
-Clone or download this repository to a folder in your computer, and open a terminal in the project directory.
-Download VS Code on your desktop.
-Open VS Code.
-Go to  Files on the top left panel, then go to Open Folder, then go to the Folder you cloned the repository to in your computer, then click open.
-Open the terminal, this will open the directorry in which the repository is on.
-
-## 4. Requirements
-
-- Python
+- Python 3.11
 - NumPy
 - Pandas
 - SciPy
@@ -37,25 +29,8 @@ Open the terminal, this will open the directorry in which the repository is on.
 - Imbalanced-learn
 - Joblib
 
-## 5. Installation
+Install the required packages using:
 
-Before creating a virtual environment, run the following command in the current terminal session:
-
-```bash
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-```
-
-Create and activate a virtual environment before the code execution, then install the dependencies in the requirements.
-
-```bash
-py -m venv .venv
-
-.venv\Scripts\Activate.ps1
-
-python -c "import sys; print(sys.executable)"
-```
-
-Install the required packages in the requirements text file using the below command:
 
 pip install numpy pandas scipy scikit-learn imbalanced-learn wfdb neurokit2 matplotlib
 
@@ -63,7 +38,18 @@ pip install numpy pandas scipy scikit-learn imbalanced-learn wfdb neurokit2 matp
 python -m pip install -r requirements.txt
 ```
 
-## 6. Execution Order
+## 4. Installation
+
+Clone or download this repository and open a terminal in the project directory.
+
+Create and activate a virtual environment before the code execution, then install the dependencies listed above.
+
+```bash
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+python -c "import sys; print(sys.executable)"
+```
+## 5. Execution Order
 
 Run the main pipeline scripts from the project directory in the following order:
 
@@ -87,18 +73,18 @@ python step3_segmentation.py
 python step4_patient_labeling.py
 python step5_feature_extraction_relaxed.py
 python step7_train_test_split_relaxed.py
-python step8_smote_random_forest_gridsearch.py
+python "step8_smote_random_forest_gridsearch.py"
 python step8_evaluation_gridsearch.py
 ```
 
 The modelling stage also requires the `smote_utils.py` helper module to be present in the project directory.
 
-## 7. Outputs
+## 6. Outputs
 
 The scripts generate intermediate NumPy arrays and CSV files, a trained model, and evaluation results.
 
 These outputs are used by subsequent stages of the pipeline. They are generated locally when the scripts execute.
 
-## 8. Reproducibility
+## 7. Reproducibility
 
 Run the scripts in the stated order and use the same Python environment throughout the pipeline. Ensure that the dataset is downloaded and all dependencies are installed before executing the processing and modelling stages.
