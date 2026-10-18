@@ -26,7 +26,6 @@ Open the terminal, this will open the directorry in which the repository is on.
 
 ## 4. Requirements
 
-- Python
 - NumPy
 - Pandas
 - SciPy
