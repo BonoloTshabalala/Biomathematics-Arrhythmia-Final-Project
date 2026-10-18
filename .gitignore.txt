@@ -1,0 +1,41 @@
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+venv/
+
+# Downloaded ECG database
+mitdb/
+
+# Generated NumPy arrays
+X_beats.npy
+y_labels.npy
+groups.npy
+r_peaks.npy
+
+# Generated datasets and model files
+*.joblib
+X_train_relaxed.csv
+X_test_relaxed.csv
+y_train_relaxed.csv
+y_test_relaxed.csv
+ecg_features_raw.csv
+ecg_features_relaxed_raw.csv
+patient_labels.csv
+train_audit_relaxed.csv
+test_audit_relaxed.csv
+fold_composition_log.csv
+gridsearch_cv_results.csv
+beat_level_metrics_gridsearch.csv
+patient_level_predictions_gridsearch.csv
+gini_importance_gridsearch.csv
+permutation_importance_gridsearch.csv
+
+# Generated plots
+*.png
+
+# Local environment settings
+.env
