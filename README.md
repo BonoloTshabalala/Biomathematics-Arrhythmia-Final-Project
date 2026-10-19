@@ -18,7 +18,7 @@ Please follow the dataset's access conditions and citation requirements.
 
 ## 3. Desktop Setup
 
-Clone or download this repository to a folder in your computer, and open a terminal in the project directory.
+Clone or download this repository to a folder in your computer.
 Download VS Code on your desktop.
 Open VS Code.
 Go to  Files on the top left panel, then go to Open Folder, then go to the Folder you cloned the repository to in your computer, then click open.
@@ -37,12 +37,6 @@ Open the terminal, this will open the directorry in which the repository is on.
 - Joblib
 
 ## 5. Installation
-
-Before creating a virtual environment, run the following command in the current terminal session:
-
-```bash
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-```
 
 Create and activate a virtual environment before the code execution, then install the dependencies in the requirements.
 
@@ -66,7 +60,7 @@ python -m pip install -r requirements.txt
 
 Run the main pipeline scripts from the project directory in the following order:
 
-1. `step1_data_provenance.py` - downloads and examines the ECG dataset.
+1. `step1_data_provenance.py` - downloads recordings locally, and stores them in a folder named `mitdb/`. in the directory running from, the  and examines the ECG dataset.
 2. `step2_preprocessing.py` - contains the ECG signal preprocessing functions used by later stages.
 3. `step3_segmentation.py` - segments heartbeats and generates the AAMI labels and patient identifiers.
 4. `step4_patient_labeling.py` - generates patient-level labels.
