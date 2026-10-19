@@ -60,14 +60,14 @@ python -m pip install -r requirements.txt
 
 Run the main pipeline scripts from the project directory in the following order:
 
-1. `step1_data_provenance.py` - downloads recordings locally, and stores them in a folder named `mitdb/`. in the directory running from, the  and examines the ECG dataset.
-2. `step2_preprocessing.py` - contains the ECG signal preprocessing functions used by later stages.
-3. `step3_segmentation.py` - segments heartbeats and generates the AAMI labels and patient identifiers.
-4. `step4_patient_labeling.py` - generates patient-level labels.
-5. `step5_feature_extraction_relaxed.py` - extracts heartbeat features while retaining selected missing values.
-6. `step7_train_test_split_relaxed.py` - creates the training and testing datasets and handles missing features.
-7. `step8_smote_random_forest_gridsearch.py` - tunes and trains the Random Forest pipeline using SMOTE.
-8. `step8_evaluation_gridsearch.py` - evaluates beat-level and patient-level predictions.
+1. `step1_data_provenance.py` - downloads recordings locally, and stores them in a folder named `mitdb/`. in the directory running from, the  and examines the ECG dataset. Runs a bit long. 
+2. `step2_preprocessing.py` - contains the ECG signal preprocessing functions used by later stages. As the code runs, it's going to pop up a figure, dismiss the figure to allow the code to finish running.
+3. `step3_segmentation.py` - segments heartbeats and generates the AAMI labels and patient identifiers. This will print the AAMI class distribution in the terminal.
+4. `step4_patient_labeling.py` - generates patient-level labels. This will print a full per-record burden values and labels.
+5. `step5_feature_extraction_relaxed.py` - extracts heartbeat features while retaining selected missing values. This print diagnostics of this step in the terminal of how many features were dropped and retained. Takes a while running.
+6. `step7_train_test_split_relaxed.py` - creates the training and testing datasets and handles missing features. This prints how the split occurred, the records dropped, the number of beats imputed for each class, the number of beats dropped in each file.
+7. `step8_smote_random_forest_gridsearch.py` - tunes and trains the Random Forest pipeline using SMOTE. This prints the actual per-fold class composition in the terminal. Runs the longest.
+8. `step8_evaluation_gridsearch.py` - evaluates beat-level and patient-level predictions. This prints the statistical analysis of the metrics (recall, precision, specificity, and accuracy) for both the beat-level and patient-level.
 
 Run each script only after the preceding stage has completed successfully.
 
